@@ -1,6 +1,8 @@
 # cursed-sep-resources
 Resources that can allow you to use tvOS 10.2.2 SEP from Apple TV HD to downgrade A8 (excluding A8X) devices to 10(.2)-10.3.3 with blobs
 
+(I've only tested the iPod touch 6 manifests at the moment)
+
 NOTE: ON TOUCHID DEVICES, TOUCH ID WILL VERY LIKELY NOT WORK. AND ALSO, restores with this WILL USE LATEST BASEBAND if you have an iPhone 6 or 6 Plus or a cellular iPad mini 4
 
 BuildManifests in this repo are Apple TV BuildManifests but with DeviceClass in the manifest changed to the board config of a different target device (eg: `j42dap` to `n102ap` for it to be working on iPod touch 6)
