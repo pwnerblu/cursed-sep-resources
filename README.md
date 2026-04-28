@@ -31,6 +31,8 @@ For devices without baseband (eg: touch 6, mini 4 Wi-Fi) run this:
 
 `sudo FUTURERESTORE_I_SOLEMNLY_SWEAR_THAT_I_AM_UP_TO_NO_GOOD=1 ./futurerestore -t [SHSH blob] --use-pwndfu --sep sep-firmware.j42d.RELEASE.im4p --sep-manifest [appropriate manifest from this repo] --no-rsep --no-baseband [IPSW]`
 
+You may see this error in futurerestore: `[Error] [TSSC] selected device can't be used with that buildmanifest`. This is normal (because the manifest is originally from AppleTV HD 10.2.2). If futurerestore proceeds just fine after this error, the restoring process should work. 
+
 If the restore succeeds, proceed to set up the device as normal from the Setup screen after it boots. (If the restore fails, open an issue on this repo and provide the terminal logs in your issue and relevant details)
 
 
