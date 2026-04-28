@@ -1,6 +1,8 @@
 # cursed-sep-resources
 Resources that can allow you to use tvOS 10.2.2 SEP from Apple TV HD to downgrade A8 (excluding A8X) devices to 10(.2)-10.3.3 with blobs
 
+BuildManifests in this repo are Apple TV BuildManifests but with DeviceClass in the manifest changed to the board config of a different target device (eg: `j42dap` to `n102ap`)
+
 # Download sep-firmware.j42d.RELEASE.im4p from tvOS 10.2.2 with `pzb`
 
 `pzb -g Firmware/all_flash/sep-firmware.j42d.RELEASE.im4p https://secure-appldnld.apple.com/tvos10.2.2/091-23452-20170720-5D53229C-6A56-11E7-8577-8B2C4A4DD6D5/AppleTV5,3_10.2.2_14W756_Restore.ipsw`
