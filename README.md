@@ -1,17 +1,8 @@
 # cursed-sep-resources
-Resources that can allow you to use tvOS 10.2.2 SEP from Apple TV HD to downgrade A8 (excluding A8X) devices to 10(.2)-10.3.3 with blobs
 
-(I've only tested the iPod touch 6 manifests at the moment)
+Resources for tvOS 10 SEP on A8 devices or iPhone 6 iOS 12 SEP on iPad mini 4
 
-NOTE: ON TOUCHID DEVICES, TOUCH ID WILL VERY LIKELY NOT WORK and the restore itself may take a while to even complete. AND also, restores with this WILL use latest baseband if you have an iPhone 6 or 6 Plus or a cellular iPad mini 4
-
-BuildManifests in this repo are Apple TV BuildManifests but with DeviceClass in the manifest changed to the board config of a different target device (eg: `j42dap` to `n102ap` for it to be working on iPod touch 6)
-
-# Download sep-firmware.j42d.RELEASE.im4p from tvOS 10.2.2 with `pzb`
-
-`pzb -g Firmware/all_flash/sep-firmware.j42d.RELEASE.im4p https://secure-appldnld.apple.com/tvos10.2.2/091-23452-20170720-5D53229C-6A56-11E7-8577-8B2C4A4DD6D5/AppleTV5,3_10.2.2_14W756_Restore.ipsw`
-
-Then, download custom buildmanifest for your device from this repo (so futurerestore will work with it)
+# tvOS 10 SEP stuff:
 
 For iPhone 6, download `BuildManifest-iPhone7,2.plist` from this repo
 
@@ -23,27 +14,8 @@ For iPad mini 4 (Wi-Fi), download `BuildManifest-iPad5,1.plist` from this repo
 
 For iPad mini 4 (Cellular), download `BuildManifest-iPad5,2.plist` from this repo
 
-Then, restore with futurerestore in pwned DFU with following command with blobs (assuming you have actual valid blobs for 10.2 (maybe 10.1.x)-10.3.3), this command is for devices with baseband:
+# iPhone 6 iOS 12 SEP stuff for iPad mini 4:
 
-`sudo FUTURERESTORE_I_SOLEMNLY_SWEAR_THAT_I_AM_UP_TO_NO_GOOD=1 ./futurerestore -t [SHSH blob] --use-pwndfu --sep sep-firmware.j42d.RELEASE.im4p --sep-manifest [appropriate manifest from this repo] --no-rsep --latest-baseband [IPSW]`
+For iPad mini 4 (Wi-Fi), download `BuildManifest-iPad5,1-12.5.8.plist` from this repo
 
-For devices without baseband (eg: touch 6, mini 4 Wi-Fi) run this:
-
-`sudo FUTURERESTORE_I_SOLEMNLY_SWEAR_THAT_I_AM_UP_TO_NO_GOOD=1 ./futurerestore -t [SHSH blob] --use-pwndfu --sep sep-firmware.j42d.RELEASE.im4p --sep-manifest [appropriate manifest from this repo] --no-rsep --no-baseband [IPSW]`
-
-You may see this error in futurerestore: `[Error] [TSSC] selected device can't be used with that buildmanifest`. This is normal (because the manifest is originally from AppleTV HD 10.2.2). If futurerestore proceeds just fine after this error, the restoring process should work. 
-
-If the restore succeeds, proceed to set up the device as normal from the Setup screen after it boots. (If the restore fails, open an issue on this repo and provide the terminal logs in your issue and relevant details)
-
-
-
-
-
-
-
-
-
-
-
-
-
+For iPad mini 4 (Cellular), download `BuildManifest-iPad5,2-12.5.8.plist` from this repo
